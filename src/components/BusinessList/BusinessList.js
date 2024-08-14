@@ -1,5 +1,5 @@
-import Business from "./Business";
-import styles from "./BusinessList.module.css"
+import Business from "../Business/Business";
+import styles from "./BusinessList.module.css";
 
 export default function BusinessList() {
   return (

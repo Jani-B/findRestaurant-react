@@ -8,15 +8,12 @@ const sortByOptions = {
 };
 
 export default function SearchBar() {
-  const bestMatch = () => {};
-  const [searchTerm, setSearchTerm] = useState("Search Restaurants");
+  const [searchTerm, setSearchTerm] = useState();
   const [location, setLocation] = useState("Search Location");
   const [sortOption, setSortOption] = useState("Best Match");
 
   const sortButtonEvent = (event) => {
     setSortOption(event.target.id);
-
-    console.log(sortOption);
   };
 
   const checkClass = (id) => {
@@ -24,6 +21,21 @@ export default function SearchBar() {
       return styles.activeButton;
     }
     return styles.sortButton;
+  };
+
+  const searchInput = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const locationInput = (event) => {
+    setLocation(event.target.value);
+  };
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    console.log(
+      `Searching for ${searchTerm} ${location} with sortOption: ${sortOption}`
+    );
   };
 
   return (
@@ -59,11 +71,23 @@ export default function SearchBar() {
           </li>
         </ul>
       </div>
-      <div className={styles.inputContainer}>
-        <input className={styles.searchInput} value={searchTerm}></input>
-        <input className={styles.searchInput} value={location}></input>
-      </div>
-      <button className={styles.searchButton}>Lets Go!</button>
+      <form onSubmit={handleSearch}>
+        <div className={styles.inputContainer}>
+          <input
+            className={styles.searchInput}
+            placeholder="Search Restaurants"
+            onChange={searchInput}
+          ></input>
+          <input
+            placeholder="Search Location"
+            className={styles.searchInput}
+            onChange={locationInput}
+          ></input>
+        </div>
+        <button type="submit" className={styles.searchButton}>
+          Lets Go!
+        </button>
+      </form>
     </div>
   );
 }

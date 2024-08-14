@@ -28,7 +28,7 @@ export default function SearchBar() {
 
   return (
     <div className={styles.searchBarContainer}>
-      <div>
+      <div className={styles.sortDiv}>
         <ul className={styles.sortContainer}>
           <li>
             <button
@@ -59,8 +59,10 @@ export default function SearchBar() {
           </li>
         </ul>
       </div>
-      <input className={styles.searchInput} value={searchTerm}></input>
-      <input className={styles.searchInput} value={location}></input>
+      <div className={styles.inputContainer}>
+        <input className={styles.searchInput} value={searchTerm}></input>
+        <input className={styles.searchInput} value={location}></input>
+      </div>
       <button className={styles.searchButton}>Lets Go!</button>
     </div>
   );

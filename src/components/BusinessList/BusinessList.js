@@ -1,16 +1,12 @@
 import Business from "../Business/Business";
 import styles from "./BusinessList.module.css";
 
-export default function BusinessList() {
+export default function BusinessList(props) {
   return (
     <div className={styles.businessListContainer}>
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-      <Business />
+      {props.businessDetails.map((business) => (
+        <Business businessdata={business} />
+      ))}
     </div>
   );
 }

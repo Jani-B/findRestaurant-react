@@ -1,3 +1,7 @@
 .businessContainer {
   border: 1px solid black;
 }
+
+.businessImage {
+  max-width: 200px;
+}

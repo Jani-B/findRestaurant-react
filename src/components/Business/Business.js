@@ -1,20 +1,17 @@
-import styles from "./Business.module.css"
+import styles from "./Business.module.css";
 
-export default function Business() {
-
-
-
+export default function Business(props) {
   return (
     <div className={styles.businessContainer}>
-      <img src=""></img>
-      <h2>Business name here</h2>
-      <p>101 paddinton way</p>
-      <p>Los Angeles</p>
+      <img className={styles.businessImage} src={props.businessdata.image}></img>
+      <h2>{props.businessdata.name}</h2>
+      <p>{props.businessdata.address1}</p>
+      <p>{props.businessdata.city}</p>
       <p>State</p>
-      <p>00720</p>
-      <p>Greek</p>
-      <p>4.9 stars</p>
-      <p>1052 reviews</p>
+      <p>{props.businessdata.postal_code}</p>
+      <p>{props.businessdata.food_type}</p>
+      <p>{props.businessdata.rating} Stars</p>
+      <p>{props.businessdata.reviews} reviews</p>
     </div>
   );
 }

@@ -5,7 +5,7 @@ export default function BusinessList(props) {
   return (
     <div className={styles.businessListContainer}>
       {props.businessDetails.map((business) => (
-        <Business businessdata={business} />
+        <Business key={business.name} businessdata={business} />
       ))}
     </div>
   );

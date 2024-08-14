@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 
 const sortByOptions = {
@@ -8,22 +9,58 @@ const sortByOptions = {
 
 export default function SearchBar() {
   const bestMatch = () => {};
+  const [searchTerm, setSearchTerm] = useState("Search Restaurants");
+  const [location, setLocation] = useState("Search Location");
+  const [sortOption, setSortOption] = useState("Best Match");
+
+  const sortButtonEvent = (event) => {
+    setSortOption(event.target.id);
+
+    console.log(sortOption);
+  };
+
+  const checkClass = (id) => {
+    if (id === sortOption) {
+      return styles.activeButton;
+    }
+    return styles.sortButton;
+  };
 
   return (
     <div className={styles.searchBarContainer}>
-      <ul className={styles.sortContainer}>
-        <li>
-          <button className={styles.sortButton}>Best Match</button>
-        </li>
-        <li>
-          <button className={styles.sortButton}>Highest Rated</button>
-        </li>
-        <li>
-          <button className={styles.sortButton}>Most Reviewed</button>
-        </li>
-      </ul>
-      <input className={styles.searchInput}></input>
-      <input className={styles.searchInput}></input>
+      <div>
+        <ul className={styles.sortContainer}>
+          <li>
+            <button
+              onClick={sortButtonEvent}
+              className={checkClass("Best Match")}
+              id="Best Match"
+            >
+              Best Match
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={sortButtonEvent}
+              className={checkClass("Highest Rated")}
+              id="Highest Rated"
+            >
+              Highest Rated
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={sortButtonEvent}
+              className={checkClass("Most Reviewed")}
+              id="Most Reviewed"
+            >
+              Most Reviewed
+            </button>
+          </li>
+        </ul>
+      </div>
+      <input className={styles.searchInput} value={searchTerm}></input>
+      <input className={styles.searchInput} value={location}></input>
       <button className={styles.searchButton}>Lets Go!</button>
     </div>
   );

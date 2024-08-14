@@ -21,6 +21,12 @@
   margin-bottom: 1rem;
 }
 
+.activeButton {
+  color: green;
+  background: none;
+  border: none;
+}
+
 .searchInput:last-of-type {
   margin-left: 1rem;
 }
@@ -29,4 +35,8 @@
   display: block;
   clear: left;
   margin: 2rem auto;
+}
+
+.activeButton {
+  color: green;
 }

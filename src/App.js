@@ -53,7 +53,9 @@ const apiMockData = [
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">
+        <h1>Ravenous</h1>
+      </header>
       <main>
         <SearchBar />
         <BusinessList businessDetails={apiMockData} />

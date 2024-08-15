@@ -1,6 +1,6 @@
 # Find your restaurant API
 
-![]("./screenshot.jpg")
+![](./screenshot.jpg)
 
 ## Purpose
 

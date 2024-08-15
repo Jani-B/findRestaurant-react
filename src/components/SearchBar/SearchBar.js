@@ -40,7 +40,7 @@ export default function SearchBar({ searchFromYelp }) {
           <li>
             <button
               onClick={sortButtonEvent}
-              className={checkClass("Best Match")}
+              className={checkClass("best_match")}
               id="best_match"
             >
               Best Match
@@ -49,7 +49,7 @@ export default function SearchBar({ searchFromYelp }) {
           <li>
             <button
               onClick={sortButtonEvent}
-              className={checkClass("Highest Rated")}
+              className={checkClass("rating")}
               id="rating"
             >
               Highest Rated
@@ -58,8 +58,8 @@ export default function SearchBar({ searchFromYelp }) {
           <li>
             <button
               onClick={sortButtonEvent}
-              className={checkClass("Most Reviewed")}
-              id="most_reviewed"
+              className={checkClass("review_count")}
+              id="review_count"
             >
               Most Reviewed
             </button>

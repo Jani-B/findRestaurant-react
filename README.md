@@ -1,12 +1,11 @@
-# Getting Started with Create React App
+# Find your restaurant API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](./screenshot.jpg)
 
 ## Purpose
 
-- Idea is that App can take information of restaurants trough API connection.
-  - Get for example name, location, rating, reviews etc.
-- Display them on the page.
+- App will take in search terms and the go and fetch from Yelp API the restaurants that fits the search terms.
+- For example: If searched by city "helsinki" and chosen best-rating then will bring 20 restaurants from Helsinki with best rating.
 
 ## Technologies used
 
@@ -15,6 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - UseStates
   - Props
   - Hooks
+  - Fetch
 
 - To use the API you have to add a file to utils.
-  - Add file yelpApi.js to the utils folder
+  - Add file yelpApi.js to the utils folder with yout api key to YELP.

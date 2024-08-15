@@ -7,7 +7,7 @@ import { useState } from "react";
 const apiMockData = [
   {
     id: "1",
-    name: "1st Business",
+    name: "Mock Business",
     address1: "location street 1010",
     address2: "Specific loc",
     city: "LA",
@@ -20,7 +20,7 @@ const apiMockData = [
   },
   {
     id: "2",
-    name: "2st Business",
+    name: "Restaurant for Burgers",
     address1: "street 3534",
     address2: "Morer",
     city: "NY",
@@ -33,7 +33,7 @@ const apiMockData = [
   },
   {
     id: "3",
-    name: "3st Business",
+    name: "Meaty",
     address1: "street 3534",
     address2: "Morer",
     city: "Mexico",
@@ -46,7 +46,7 @@ const apiMockData = [
   },
   {
     id: "4",
-    name: "4st Business",
+    name: "Last one for meat",
     address1: "street 3534",
     address2: "Morer",
     city: "Hamb",
@@ -73,7 +73,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Ravenous</h1>
+        <h1>Find Restaurant</h1>
       </header>
       <main>
         <SearchBar searchFromYelp={searchFromYelp} />

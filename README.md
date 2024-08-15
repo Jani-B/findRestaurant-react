@@ -11,6 +11,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Technologies used
 
 - React
+
   - UseStates
   - Props
   - Hooks
+
+- To use the API you have to add a file to utils.
+  - Add file yelpApi.js to the utils folder

@@ -1,6 +1,6 @@
 .businessListContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 3rem;
   margin-top: 3rem;
 }

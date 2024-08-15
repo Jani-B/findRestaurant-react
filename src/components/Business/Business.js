@@ -1,17 +1,37 @@
 import styles from "./Business.module.css";
 
-export default function Business(props) {
+//    <p>{business.address}</p>
+//<p>{business.city}</p>
+//<p>State</p>
+//<p>{business.postal_code}</p>
+//<p>{business.food_type}</p>
+//<p>{business.rating} Stars</p>
+//<p>{business.reviews} reviews</p>
+//
+
+export default function Business({ business }) {
   return (
     <div className={styles.businessContainer}>
-      <img className={styles.businessImage} src={props.businessdata.image}></img>
-      <h2>{props.businessdata.name}</h2>
-      <p>{props.businessdata.address1}</p>
-      <p>{props.businessdata.city}</p>
-      <p>State</p>
-      <p>{props.businessdata.postal_code}</p>
-      <p>{props.businessdata.food_type}</p>
-      <p>{props.businessdata.rating} Stars</p>
-      <p>{props.businessdata.reviews} reviews</p>
+      <div className={styles.imageContainer}>
+        <img
+          className={styles.businessImage}
+          src={business.imageSrc}
+          alt="restaurant"
+        ></img>
+      </div>
+      <div className={styles.informationContainer}>
+        <div className={styles.textContainer}>
+          <h2>{business.name}</h2>
+          <p>{business.address}</p>
+          <p>{business.city}</p>
+          <p>{`${business.state} ${business.postal_code}`}</p>
+        </div>
+        <div className={styles.reviewsContainer}>
+          <p className={styles.category}>{business.category}</p>
+          <p>{`${business.rating} stars `}</p>
+          <p>{`${business.reviewCount} reviews`}</p>
+        </div>
+      </div>
     </div>
   );
 }

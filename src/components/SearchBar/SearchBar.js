@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 
-const sortByOptions = {
-  "Best Match": "best_match",
-  "Highest Rated": "rating",
-  "Most Reviewed": "review_count",
-};
-
-export default function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState();
-  const [location, setLocation] = useState("Search Location");
-  const [sortOption, setSortOption] = useState("Best Match");
+export default function SearchBar({ searchFromYelp }) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [location, setLocation] = useState("");
+  const [sortOption, setSortOption] = useState("best_match");
 
   const sortButtonEvent = (event) => {
     setSortOption(event.target.id);
@@ -33,6 +27,7 @@ export default function SearchBar() {
 
   const handleSearch = (event) => {
     event.preventDefault();
+    searchFromYelp(searchTerm, location, sortOption);
     console.log(
       `Searching for ${searchTerm} ${location} with sortOption: ${sortOption}`
     );
@@ -46,7 +41,7 @@ export default function SearchBar() {
             <button
               onClick={sortButtonEvent}
               className={checkClass("Best Match")}
-              id="Best Match"
+              id="best_match"
             >
               Best Match
             </button>
@@ -55,7 +50,7 @@ export default function SearchBar() {
             <button
               onClick={sortButtonEvent}
               className={checkClass("Highest Rated")}
-              id="Highest Rated"
+              id="rating"
             >
               Highest Rated
             </button>
@@ -64,7 +59,7 @@ export default function SearchBar() {
             <button
               onClick={sortButtonEvent}
               className={checkClass("Most Reviewed")}
-              id="Most Reviewed"
+              id="most_reviewed"
             >
               Most Reviewed
             </button>

@@ -1,7 +1,30 @@
 .businessContainer {
-  border: 1px solid black;
+  max-width: 300px;
+}
+
+.imageContainer {
+  width: 100%;
 }
 
 .businessImage {
-  max-width: 200px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.informationContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+.textContainer h2 {
+  font-size: 16px;
+}
+
+.category {
+  font-size: 20px;
+  color: goldenrod;
 }

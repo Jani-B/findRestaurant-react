@@ -1,64 +1,83 @@
-import logo from "./logo.svg";
 import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 import BusinessList from "./components/BusinessList/BusinessList";
+import YelpGet from "./utils/Yelp";
+import { useState } from "react";
 
 const apiMockData = [
   {
+    id: "1",
     name: "1st Business",
     address1: "location street 1010",
     address2: "Specific loc",
     city: "LA",
+    state: "something",
     postal_code: "00262",
-    food_type: "Italian",
+    category: "Italian",
     rating: "4.5",
-    reviews: "1005",
-    image: "./restaurantmock.jpg",
+    reviewCount: "1005",
+    imageSrc: "./restaurantmock.jpg",
   },
   {
+    id: "2",
     name: "2st Business",
     address1: "street 3534",
     address2: "Morer",
     city: "NY",
+    state: "something",
     postal_code: "00424",
-    food_type: "Greek",
+    category: "Greek",
     rating: "4.5",
-    reviews: "1005",
-    image: "./restaurantmock.jpg",
+    reviewCount: "1005",
+    imageSrc: "./restaurantmock.jpg",
   },
   {
+    id: "3",
     name: "3st Business",
     address1: "street 3534",
     address2: "Morer",
     city: "Mexico",
+    state: "something",
     postal_code: "00424",
-    food_type: "Australian",
+    category: "Australian",
     rating: "4.5",
-    reviews: "1005",
-    image: "./restaurantmock.jpg",
+    reviewCount: "1005",
+    imageSrc: "./restaurantmock.jpg",
   },
   {
+    id: "4",
     name: "4st Business",
     address1: "street 3534",
     address2: "Morer",
     city: "Hamb",
+    state: "something",
     postal_code: "00424",
-    food_type: "Finnish",
+    category: "Finnish",
     rating: "4.5",
-    reviews: "1005",
-    image: "./restaurantmock.jpg",
+    reviewCount: "1005",
+    imageSrc: "./restaurantmock.jpg",
   },
 ];
 
 function App() {
+  const [business, setBusiness] = useState(apiMockData);
+
+  const searchFromYelp = async (term, location, sortOption) => {
+    const businesses = await YelpGet(term, location, sortOption);
+    setBusiness(businesses);
+  };
+  console.log(business);
+
+  //
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Ravenous</h1>
       </header>
       <main>
-        <SearchBar />
-        <BusinessList businessDetails={apiMockData} />
+        <SearchBar searchFromYelp={searchFromYelp} />
+        <BusinessList businesses={business} />
       </main>
     </div>
   );

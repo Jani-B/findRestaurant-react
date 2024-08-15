@@ -63,7 +63,19 @@
   display: block;
   margin: 2rem auto;
   padding: 0.7rem 0;
-  width: 8%;
+  width: 15%;
   color: white;
   background-color: goldenrod;
+}
+
+@media only screen and (min-width: 700px) {
+  .searchButton {
+    width: 10%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .searchButton {
+    width: 8%;
+  }
 }
